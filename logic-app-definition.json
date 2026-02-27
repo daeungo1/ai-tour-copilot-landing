@@ -1,0 +1,75 @@
+{
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "contentVersion": "1.0.0.0",
+    "triggers": {
+      "manual": {
+        "type": "Request",
+        "kind": "Http",
+        "inputs": {
+          "method": "POST",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              }
+            },
+            "required": ["email"]
+          }
+        }
+      }
+    },
+    "actions": {
+      "Response_Success": {
+        "type": "Response",
+        "kind": "Http",
+        "inputs": {
+          "statusCode": 200,
+          "headers": {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+          },
+          "body": {
+            "status": "success",
+            "message": "Subscription received"
+          }
+        },
+        "runAfter": {
+          "Send_Email_Office365": ["Succeeded", "Failed"]
+        }
+      },
+      "Send_Email_Office365": {
+        "type": "ApiConnection",
+        "inputs": {
+          "host": {
+            "connection": {
+              "name": "@parameters('$connections')['office365']['connectionId']"
+            }
+          },
+          "method": "post",
+          "path": "/v2/Mail",
+          "body": {
+            "To": "daeungo@microsoft.com",
+            "Subject": "[AI Tour 2026] 새 뉴스레터 구독 알림",
+            "Body": "<h2>새로운 뉴스레터 구독 알림</h2><p><strong>이메일:</strong> @{triggerBody()?['email']}</p><p><strong>구독 시간:</strong> @{utcNow()}</p><p>AI Tour 2026 Copilot Newsletter 랜딩 페이지에서 새로운 구독자가 등록했습니다.</p>",
+            "Importance": "Normal"
+          }
+        },
+        "runAfter": {}
+      }
+    },
+    "outputs": {},
+    "parameters": {
+      "$connections": {
+        "defaultValue": {},
+        "type": "Object"
+      }
+    }
+  },
+  "parameters": {
+    "$connections": {
+      "value": {}
+    }
+  }
+}
