@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tour 2026 – Microsoft Copilot Newsletter</title>
+  <meta name="description" content="AI Tour 2026에서 Microsoft Copilot의 최신 소식을 만나보세요.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Tour 2026 – Microsoft Copilot Newsletter">
+  <meta property="og:description" content="AI Tour 2026에서 Microsoft Copilot의 최신 소식을 만나보세요.">
+  <meta property="og:image" content="https://ep-aitour-abf2fubhgfftdufa.b02.azurefd.net/images/Microsoft365-FY26-Consumer-C2-SUITE-HERO-FREE-ALT-NON-AI-16x9.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:url" content="https://ep-aitour-abf2fubhgfftdufa.b02.azurefd.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6264A7;
+      --primary-dark: #464775;
+      --accent: #6264A7;
+      --gradient-start: #6264A7;
+      --gradient-end: #A855F7;
+      --bg: #0F0F1A;
+      --bg-card: rgba(255,255,255,0.06);
+      --text: #FFFFFF;
+      --text-secondary: #B4B4CF;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(98,100,167,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(168,85,247,0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(59,130,246,0.05) 0%, transparent 70%);
+      animation: bgShift 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.1) rotate(2deg); }
+    }
+
+    /* Header */
+    header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+      background: rgba(15,15,26,0.8);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .copilot-icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    .logo-img {
+      height: 24px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34D399;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #818CF8, #A855F7, #EC4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(98,100,167,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(98,100,167,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Feature Cards */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      padding: 2rem 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(98,100,167,0.3);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .newsletter h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .newsletter p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s;
+    }
+
+    .subscribe-form input[type="email"]:focus {
+      border-color: var(--accent);
+    }
+
+    .subscribe-form input[type="email"]::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .subscribe-form button {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: #fff;
+      font-weight: 600;
+      padding: 0.85rem 1.5rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .subscribe-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(98,100,167,0.4);
+    }
+
+    /* Stats Section */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #818CF8, #A855F7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 3rem 1.25rem 2rem;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+      }
+
+      .stats {
+        gap: 2rem;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Showcase Section */
+    .showcase {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .showcase-img-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .showcase-img-wrapper:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 60px rgba(98,100,167,0.3);
+    }
+
+    .showcase-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .showcase-caption {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-gradient"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-group">
+      <img class="logo-img" src="images/Microsoft-logo_rgb_c-wht.png" alt="Microsoft Logo">
+      <span class="logo-text">Copilot</span>
+    </div>
+    <span class="badge">AI Tour 2026</span>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span>Live at AI Tour 2026</span>
+    </div>
+    <h1>
+      AI와 함께하는<br>
+      <span class="gradient-text">새로운 업무 혁신</span>
+    </h1>
+    <p>
+      Microsoft Copilot이 여러분의 업무 방식을 어떻게 혁신하는지 경험해보세요. 
+      코딩, 문서 작성, 데이터 분석까지 — AI가 당신의 최고의 파트너가 됩니다.
+    </p>
+    <div class="cta-group">
+      <a class="btn-primary" href="https://copilot.microsoft.com" target="_blank" rel="noopener">
+        ✨ Copilot 시작하기
+      </a>
+      <a class="btn-secondary" href="#subscribe">
+        📩 뉴스레터 구독
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat-item">
+      <div class="stat-number">1M+</div>
+      <div class="stat-label">일일 활성 사용자</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">70%</div>
+      <div class="stat-label">생산성 향상</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">300+</div>
+      <div class="stat-label">엔터프라이즈 고객</div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase">
+    <div class="showcase-img-wrapper">
+      <img src="images/Microsoft365-FY26-Consumer-C2-SUITE-HERO-FREE-ALT-NON-AI-16x9.png" alt="Microsoft 365 Copilot Suite">
+    </div>
+    <p class="showcase-caption">Microsoft 365 Copilot — Word, Excel, PowerPoint, Teams 전반에 걸친 AI 경험</p>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="features">
+    <div class="card">
+      <span class="card-icon">💻</span>
+      <h3>GitHub Copilot</h3>
+      <p>AI 페어 프로그래머가 코드 작성, 리뷰, 디버깅을 도와줍니다. 더 빠르게, 더 정확하게 개발하세요.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <h3>Microsoft 365 Copilot</h3>
+      <p>Word, Excel, PowerPoint, Teams에서 AI가 문서 작성과 데이터 분석을 자동화합니다.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">☁️</span>
+      <h3>Azure AI Services</h3>
+      <p>Azure 위에서 AI 애플리케이션을 빌드하고 배포하세요. 엔터프라이즈급 보안과 확장성을 제공합니다.</p>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscribe -->
+  <section class="newsletter" id="subscribe">
+    <h2>뉴스레터 구독하기</h2>
+    <p>Copilot의 최신 업데이트와 AI Tour 소식을 이메일로 받아보세요.</p>
+    <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+      <input type="email" placeholder="이메일 주소를 입력하세요" required autocomplete="email">
+      <button type="submit">구독하기</button>
+    </form>
+    <p id="subscribe-success" style="display:none; color:#34D399; margin-top:1rem; font-weight:600;">
+      ✅ 구독이 완료되었습니다! 감사합니다.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      &copy; 2026 Microsoft Corporation. All Rights Reserved. &nbsp;|&nbsp;
+      <a href="https://privacy.microsoft.com" target="_blank" rel="noopener">Privacy</a> &nbsp;|&nbsp;
+      <a href="https://www.microsoft.com/en-us/legal/terms-of-use" target="_blank" rel="noopener">Terms</a>
+    </p>
+  </footer>
+
+  <script>
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[type="email"]').value;
+      // In production, send to your backend or Azure Function
+      console.log('Newsletter subscription:', email);
+      form.style.display = 'none';
+      document.getElementById('subscribe-success').style.display = 'block';
+    }
+
+    // Intersection Observer for card animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
