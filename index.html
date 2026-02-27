@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Tour 2026 – Microsoft Copilot Newsletter</title>
-  <meta name="description" content="AI Tour 2026에서 Microsoft Copilot의 최신 소식을 만나보세요.">
+  <title>Monthly Copilot — Snack-size Reads for Work</title>
+  <meta name="description" content="스낵 먹듯, 코파일럿 소식 고르기. 5분만에 읽고 바로 써먹는 Copilot 웹진.">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Tour 2026 – Microsoft Copilot Newsletter">
-  <meta property="og:description" content="AI Tour 2026에서 Microsoft Copilot의 최신 소식을 만나보세요.">
+  <meta property="og:title" content="Monthly Copilot — Snack-size Reads for Work">
+  <meta property="og:description" content="스낵 먹듯, 코파일럿 소식 고르기. 5분만에 읽고 바로 써먹는 Copilot 웹진.">
   <meta property="og:image" content="https://ep-aitour-abf2fubhgfftdufa.b02.azurefd.net/images/Microsoft365-FY26-Consumer-C2-SUITE-HERO-FREE-ALT-NON-AI-16x9.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
@@ -448,6 +448,55 @@
       color: var(--text-secondary);
     }
 
+    /* Logo subtitle */
+    .logo-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-left: 0.25rem;
+    }
+
+    /* Section headers */
+    .section-header {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header h2 .section-tag {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-left: 0.5rem;
+    }
+
+    /* Card badge overlay */
+    .card .card-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      background: rgba(98,100,167,0.2);
+      border: 1px solid rgba(98,100,167,0.3);
+      color: #A5B4FC;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card .card-badge.special {
+      background: rgba(234,179,8,0.15);
+      border-color: rgba(234,179,8,0.3);
+      color: #FCD34D;
+    }
+
     /* Smooth scroll */
     html {
       scroll-behavior: smooth;
@@ -469,30 +518,31 @@
   <!-- Header -->
   <header>
     <div class="logo-group">
-      <img class="logo-img" src="images/Microsoft-logo_rgb_c-wht.png" alt="Microsoft Logo">
-      <span class="logo-text">Copilot</span>
+      <span style="font-size:1.5rem">🍪</span>
+      <span class="logo-text">Monthly Copilot</span>
+      <span class="logo-subtitle">snack-size reads for work</span>
     </div>
-    <span class="badge">AI Tour 2026</span>
+    <span class="badge">Mar. 2026</span>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-eyebrow">
       <span class="dot"></span>
-      <span>Live at AI Tour 2026</span>
+      <span>이번 달은 '가볍게 한입' 모드</span>
     </div>
     <h1>
-      AI와 함께하는<br>
-      <span class="gradient-text">새로운 업무 혁신</span>
+      스낵 먹듯,<br>
+      <span class="gradient-text">코파일럿 소식 고르기</span>
     </h1>
     <p>
-      Microsoft Copilot이 여러분의 업무 방식을 어떻게 혁신하는지 경험해보세요. 
-      코딩, 문서 작성, 데이터 분석까지 — AI가 당신의 최고의 파트너가 됩니다.
+      넷플릭스처럼 스크롤해서 고르고, 5분만에 읽고, 바로 써먹는 웹진.<br>
+      카드를 선택하면 상세 페이지로 이동합니다.
     </p>
     <div class="cta-group">
-      <a class="btn-primary" href="https://copilot.microsoft.com" target="_blank" rel="noopener">
-        ✨ Copilot 시작하기
-      </a>
+      <button class="btn-primary" id="randomPick">
+        🍪 랜덤 한입 추천
+      </button>
       <a class="btn-secondary" href="#subscribe">
         📩 뉴스레터 구독
       </a>
@@ -502,50 +552,73 @@
   <!-- Stats -->
   <section class="stats">
     <div class="stat-item">
-      <div class="stat-number">1M+</div>
-      <div class="stat-label">일일 활성 사용자</div>
+      <div class="stat-number">6</div>
+      <div class="stat-label">Articles per bag</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">70%</div>
-      <div class="stat-label">생산성 향상</div>
+      <div class="stat-number">5 min</div>
+      <div class="stat-label">Serving size (1 Article)</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">300+</div>
-      <div class="stat-label">엔터프라이즈 고객</div>
+      <div class="stat-number">260</div>
+      <div class="stat-label">Calories ("집중력" 기준)</div>
     </div>
   </section>
 
-  <!-- Showcase -->
-  <section class="showcase">
-    <div class="showcase-img-wrapper">
-      <img src="images/Microsoft365-FY26-Consumer-C2-SUITE-HERO-FREE-ALT-NON-AI-16x9.png" alt="Microsoft 365 Copilot Suite">
-    </div>
-    <p class="showcase-caption">Microsoft 365 Copilot — Word, Excel, PowerPoint, Teams 전반에 걸친 AI 경험</p>
-  </section>
-
-  <!-- Feature Cards -->
+  <!-- Editor's Picks -->
+  <div class="section-header">
+    <h2>이번 달 추천 <span class="section-tag">(Editor's Picks)</span></h2>
+  </div>
   <section class="features">
     <div class="card">
-      <span class="card-icon">💻</span>
-      <h3>GitHub Copilot</h3>
-      <p>AI 페어 프로그래머가 코드 작성, 리뷰, 디버깅을 도와줍니다. 더 빠르게, 더 정확하게 개발하세요.</p>
+      <span class="card-badge special">스페셜</span>
+      <span class="card-icon">🎤</span>
+      <h3>AI Tour에서 주목할 Copilot 세션</h3>
+      <p>3월 26일 코엑스에서 열리는 AI Tour! 코파일럿 관련 세션과 부스를 한방에 정리해 드립니다.</p>
     </div>
     <div class="card">
-      <span class="card-icon">📊</span>
-      <h3>Microsoft 365 Copilot</h3>
-      <p>Word, Excel, PowerPoint, Teams에서 AI가 문서 작성과 데이터 분석을 자동화합니다.</p>
+      <span class="card-badge">정기 코너</span>
+      <span class="card-icon">❤️</span>
+      <h3>최애의 코파일럿</h3>
+      <p>MS 직원들이 일상 업무에서 정말 자주 쓰는 코파일럿 기능과 패턴을 인터뷰 기반으로 소개합니다.</p>
     </div>
     <div class="card">
-      <span class="card-icon">☁️</span>
-      <h3>Azure AI Services</h3>
-      <p>Azure 위에서 AI 애플리케이션을 빌드하고 배포하세요. 엔터프라이즈급 보안과 확장성을 제공합니다.</p>
+      <span class="card-badge">정기 코너</span>
+      <span class="card-icon">🏆</span>
+      <h3>에이전톤 2026 우승 사례</h3>
+      <p>에이전톤 우승팀의 Custom Agent 사례를 분석하고, 어디서부터 직접 개발이 필요한지 가이드합니다.</p>
+    </div>
+  </section>
+
+  <!-- 정기 코너 -->
+  <div class="section-header">
+    <h2>정기 코너</h2>
+  </div>
+  <section class="features">
+    <div class="card">
+      <span class="card-badge">정기 코너</span>
+      <span class="card-icon">😅</span>
+      <h3>Copilot의 실수 모음집</h3>
+      <p>코파일럿이 제대로 못해도 괜찮아! 실패 사례를 대놓고 공개하고, 더 잘 쓰는 법을 알려드립니다.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge">정기 코너</span>
+      <span class="card-icon">🤖</span>
+      <h3>우리의 Built-in 에이전트</h3>
+      <p>M365 Copilot과 Copilot Studio의 빌트인 에이전트 & 템플릿을 모르는 분들을 위해 총정리합니다.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge">정기 코너</span>
+      <span class="card-icon">📢</span>
+      <h3>알립니다</h3>
+      <p>코파일럿 관련 세미나, 워크샵, 교육 일정과 파트너 · 외부 이벤트 소식을 한데 모았습니다.</p>
     </div>
   </section>
 
   <!-- Newsletter Subscribe -->
   <section class="newsletter" id="subscribe">
     <h2>뉴스레터 구독하기</h2>
-    <p>Copilot의 최신 업데이트와 AI Tour 소식을 이메일로 받아보세요.</p>
+    <p>Monthly Copilot의 새 호가 나올 때마다 이메일로 받아보세요.</p>
     <form class="subscribe-form" onsubmit="handleSubscribe(event)">
       <input type="email" placeholder="이메일 주소를 입력하세요" required autocomplete="email">
       <button type="submit">구독하기</button>
@@ -558,7 +631,7 @@
   <!-- Footer -->
   <footer>
     <p>
-      &copy; 2026 Microsoft Corporation. All Rights Reserved. &nbsp;|&nbsp;
+      &copy; 2026 Monthly Copilot · All bytes reserved · Printed in MAR. &nbsp;|&nbsp;
       <a href="https://privacy.microsoft.com" target="_blank" rel="noopener">Privacy</a> &nbsp;|&nbsp;
       <a href="https://www.microsoft.com/en-us/legal/terms-of-use" target="_blank" rel="noopener">Terms</a>
     </p>
@@ -573,7 +646,6 @@
       const btn = form.querySelector('button[type="submit"]');
       const email = form.querySelector('input[type="email"]').value;
 
-      // Disable button during submission
       btn.disabled = true;
       btn.textContent = '전송 중...';
 
@@ -597,6 +669,17 @@
         alert('구독 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
       }
     }
+
+    // 랜덤 한입 추천: highlight a random card
+    document.getElementById('randomPick').addEventListener('click', () => {
+      const cards = document.querySelectorAll('.card');
+      if (!cards.length) return;
+      // Remove previous highlights
+      cards.forEach(c => c.style.borderColor = '');
+      const pick = cards[Math.floor(Math.random() * cards.length)];
+      pick.style.borderColor = 'rgba(168,85,247,0.7)';
+      pick.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
 
     // Intersection Observer for card animations
     const observer = new IntersectionObserver((entries) => {
