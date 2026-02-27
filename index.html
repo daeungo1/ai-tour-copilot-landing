@@ -565,14 +565,37 @@
   </footer>
 
   <script>
-    function handleSubscribe(e) {
+    const LOGIC_APP_URL = 'https://prod-18.eastus2.logic.azure.com:443/workflows/d422ed57af05433da393d766674b65ab/triggers/manual/paths/invoke?api-version=2019-05-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XMExGrk0KmzXv-fa0FKXh7281Ls80jrfgv_lSSwZ_xM';
+
+    async function handleSubscribe(e) {
       e.preventDefault();
       const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
       const email = form.querySelector('input[type="email"]').value;
-      // In production, send to your backend or Azure Function
-      console.log('Newsletter subscription:', email);
-      form.style.display = 'none';
-      document.getElementById('subscribe-success').style.display = 'block';
+
+      // Disable button during submission
+      btn.disabled = true;
+      btn.textContent = '전송 중...';
+
+      try {
+        const response = await fetch(LOGIC_APP_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('subscribe-success').style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        console.error('Subscription error:', err);
+        btn.disabled = false;
+        btn.textContent = '구독하기';
+        alert('구독 처리 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+      }
     }
 
     // Intersection Observer for card animations
