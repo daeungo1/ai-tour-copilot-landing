@@ -47,7 +47,7 @@
             "method": "post",
             "path": "/v2/Mail",
             "body": {
-              "To": "daeungo@microsoft.com",
+              "To": "daeungo@microsoft.com;@{triggerBody()?['email']}",
               "Subject": "[AI Tour 2026] 새 뉴스레터 구독 알림",
               "Body": "<h2>새로운 뉴스레터 구독 알림</h2><p><strong>이메일:</strong> @{triggerBody()?['email']}</p><p><strong>구독 시간:</strong> @{utcNow()}</p><p>AI Tour 2026 Copilot Newsletter 랜딩 페이지에서 새로운 구독자가 등록했습니다.</p>",
               "Importance": "Normal"
