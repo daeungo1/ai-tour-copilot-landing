@@ -114,7 +114,6 @@
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
       background: var(--bg-warm);
       border: 1px solid var(--border);
       padding: 0.4rem 1rem;
@@ -123,19 +122,6 @@
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
       animation: flutter 2.5s ease-in-out infinite;
-    }
-
-    .hero-eyebrow .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
     }
 
     @keyframes flutter {
@@ -376,7 +362,6 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-eyebrow">
-      <span class="dot"></span>
       <span>🌸 4월, 봄바람과 함께 가볍게 한입</span>
     </div>
     <h1>
