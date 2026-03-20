@@ -18,20 +18,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #7C6CA8;
-      --primary-light: #A594D0;
-      --accent: #E8985E;
-      --accent-light: #F5C9A0;
-      --bg: #FFF9F4;
-      --bg-warm: #FFF3E8;
+      --primary: #3A8C6E;
+      --primary-light: #6BC4A6;
+      --accent: #E87CA0;
+      --accent-light: #F5B0C8;
+      --bg: #F8FFF8;
+      --bg-warm: #F0FAF0;
       --bg-card: #FFFFFF;
-      --text: #2D2A3E;
-      --text-secondary: #7A7590;
-      --text-light: #A49DB8;
-      --border: rgba(124,108,168,0.12);
-      --shadow-sm: 0 2px 8px rgba(45,42,62,0.06);
-      --shadow-md: 0 4px 20px rgba(45,42,62,0.08);
-      --shadow-lg: 0 8px 32px rgba(45,42,62,0.12);
+      --text: #2A3A2E;
+      --text-secondary: #5E7A68;
+      --text-light: #8FAA96;
+      --border: rgba(58,140,110,0.10);
+      --shadow-sm: 0 2px 8px rgba(42,58,46,0.05);
+      --shadow-md: 0 4px 20px rgba(42,58,46,0.07);
+      --shadow-lg: 0 8px 32px rgba(42,58,46,0.10);
       --radius: 16px;
     }
 
@@ -49,7 +49,7 @@
       overflow-x: hidden;
     }
 
-    /* Soft warm background */
+    /* Spring background */
     .bg-gradient {
       position: fixed;
       top: 0;
@@ -58,9 +58,10 @@
       height: 100%;
       z-index: -1;
       background:
-        radial-gradient(ellipse at 15% 10%, rgba(232,152,94,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 80%, rgba(124,108,168,0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(245,201,160,0.05) 0%, transparent 70%);
+        radial-gradient(ellipse at 10% 15%, rgba(107,196,166,0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(232,124,160,0.08) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 85%, rgba(58,140,110,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(245,176,200,0.04) 0%, transparent 40%);
     }
 
     /* Header */
@@ -69,7 +70,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255,249,244,0.9);
+      background: rgba(248,255,248,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       position: sticky;
@@ -146,7 +147,7 @@
     }
 
     .hero h1 .gradient-text {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      background: linear-gradient(135deg, #3A8C6E, #E87CA0, #6BC4A6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -252,7 +253,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-light), var(--accent));
+      background: linear-gradient(90deg, var(--primary-light), var(--accent-light), var(--accent));
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -260,7 +261,7 @@
     .card:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(124,108,168,0.2);
+      border-color: rgba(58,140,110,0.18);
     }
 
     .card:hover::before {
@@ -293,8 +294,8 @@
       font-weight: 700;
       padding: 0.2rem 0.6rem;
       border-radius: 20px;
-      background: rgba(124,108,168,0.1);
-      border: 1px solid rgba(124,108,168,0.2);
+      background: rgba(58,140,110,0.08);
+      border: 1px solid rgba(58,140,110,0.18);
       color: var(--primary);
       margin-bottom: 0.75rem;
       text-transform: uppercase;
@@ -302,9 +303,9 @@
     }
 
     .card .card-badge.special {
-      background: rgba(232,152,94,0.12);
-      border-color: rgba(232,152,94,0.25);
-      color: #C07A3E;
+      background: rgba(232,124,160,0.10);
+      border-color: rgba(232,124,160,0.22);
+      color: #C45A7A;
     }
 
     /* Footer */
@@ -366,7 +367,7 @@
   <section class="hero">
     <div class="hero-eyebrow">
       <span class="dot"></span>
-      <span>이번 달은 '가볍게 한입' 모드</span>
+      <span>🌸 4월, 봄바람과 함께 가볍게 한입</span>
     </div>
     <h1>
       스낵처럼 가볍게,<br>
